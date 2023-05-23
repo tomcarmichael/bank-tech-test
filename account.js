@@ -8,7 +8,7 @@ class Account {
       return `Deposit unsuccessful, cannot deposit 0`;
     }
     this.balance.current += amount;
-    return `Deposit successful, resulting balance is ${this.balance.current}`;
+    return `Deposit successful, resulting balance is ${this.balance.current}.00`;
   }
 }
 
