@@ -14,9 +14,16 @@ describe('Account class unit test', () => {
     };
   });
 
-  it('initializes with a balance of 0',() => {
-    const account = new Account(Balance);
-    expect(account.balance.current).toEqual(0);
+  describe('constructor', () => {
+    it('initializes with a balance of 0',() => {
+      const account = new Account(Balance);
+      expect(account.balance.current).toEqual(0);
+    });
+
+    it('initializes with an empty array of transcations',() => {
+      const account = new Account(Balance);
+      expect(account.transactions).toEqual([]);
+    });
   });
 
   describe('deposit()', () => {

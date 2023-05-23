@@ -1,7 +1,13 @@
 class Account {
+  #transactionsArray;
 
   constructor(balanceClass = Balance) {
       this.balance = new balanceClass();
+      this.#transactionsArray = []
+  }
+
+  get transactions() {
+    return this.#transactionsArray;
   }
 
   deposit(amount) {
