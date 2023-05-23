@@ -16,4 +16,9 @@ describe('Bank account integration test', () => {
     account = new Account(Balance);
     expect(account.deposit(500)).toEqual('Deposit successful, resulting balance is 500');
   });
+
+  it("doesn't allow the user to deposit 0", () => {
+    account = new Account(Balance);
+    expect(account.deposit(0)).toEqual('Deposit unsuccessful, cannot deposit 0');
+  });
 });
