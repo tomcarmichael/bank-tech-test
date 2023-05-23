@@ -10,6 +10,11 @@ class Account {
     this.balance.current += amount;
     return `Deposit successful, resulting balance is ${this.balance.current}.00`;
   }
+
+  withdraw(amount) {
+    this.balance.current -= amount;
+    return `Deposit successful, resulting balance is ${this.balance.current}.00`;
+  }
 }
 
 module.exports = Account;
