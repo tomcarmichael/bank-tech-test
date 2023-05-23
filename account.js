@@ -19,7 +19,8 @@ class Account {
       return `Deposit unsuccessful, cannot deposit 0`;
     }
     this.balance.current += amount;
-    this.#transactionsArray.push(new this.transactionClass(amount, 'credit'));
+    const transaction = new this.transactionClass(amount, 'credit', this.balance.current)
+    this.#transactionsArray.push(transaction);
     return `Deposit successful, resulting balance is ${this.balance.current}.00`;
   }
 

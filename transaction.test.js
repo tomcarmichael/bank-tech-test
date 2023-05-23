@@ -1,9 +1,11 @@
 const Transaction = require('./transaction');
 
 describe('Transaction unit test', () => { 
-  it('Initializes with a date in UK short format', () => {
-    const transaction = new Transaction(100, 'credit');
+  it('Initializes with a date in UK short format & stores the resultingBalance', () => {
+    const transaction = new Transaction(100, 'credit', 100);
     expect(transaction.date).toEqual(new Date().toLocaleDateString("en-GB"));
+    expect(transaction.resultingBalance).toEqual(100);
+
   });
 
   it('Returns the correct format date given a historic mock date', () => {
@@ -11,8 +13,9 @@ describe('Transaction unit test', () => {
     const spy = jest
       .spyOn(global, 'Date')
       .mockImplementation(() => mockDate)
-    const transaction = new Transaction(100, 'credit');
+    const transaction = new Transaction(100, 'credit', 500);
     expect(transaction.date).toEqual('31/12/1999');
+    expect(transaction.resultingBalance).toEqual(500);
     spy.mockRestore()
   });
 

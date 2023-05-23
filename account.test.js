@@ -19,7 +19,7 @@ describe('Account class unit test', () => {
     Transaction.mockImplementation((amount, type) => {
       return {
         type: type,
-        amount: amount
+        amount: amount,
       }
     });
   });
@@ -98,5 +98,13 @@ describe('Account class unit test', () => {
       expect(account.transactions.length).toEqual(2);
       expect(account.transactions[1].type).toEqual('debit');
     });
+  });
+
+  xit('Assigns the resulting balance to a transaction', () => {
+    account = new Account(Balance, Transaction);
+    account.deposit(2000);
+    account.withdraw(500);
+    expect(account.transactions[0].resultingBalance).toEqual(2000);
+    expect(account.transactions[1].resultingBalance).toEqual(1500);
   });
 });
