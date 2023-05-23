@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1684848139997" clover="3.2.0">
+  <project timestamp="1684848139997" name="All files">
+    <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="4" methods="4" coveredmethods="4" elements="21" coveredelements="20" complexity="0" loc="12" ncloc="12" packages="1" files="2" classes="2"/>
+    <file name="account.js" path="/Users/tomcarmichael/Documents/code/js/bank-tech-test/account.js">
+      <metrics statements="10" coveredstatements="10" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <line num="3" count="10" type="stmt"/>
+      <line num="7" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="6" type="stmt"/>
+      <line num="11" count="6" type="stmt"/>
+      <line num="15" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="23" count="2" type="stmt"/>
+    </file>
+    <file name="balance.js" path="/Users/tomcarmichael/Documents/code/js/bank-tech-test/balance.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="3" count="3" type="stmt"/>
+      <line num="7" count="2" type="stmt"/>
+    </file>
+  </project>
+</coverage>

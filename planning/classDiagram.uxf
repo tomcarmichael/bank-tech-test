@@ -35,15 +35,7 @@ transactions.push(deposit)
 --
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>430</y><w>40</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>20;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>430</y><w>40</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;20;50</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>280</y><w>50</w><h>80</h></coordinates><panel_attributes> 1
 lt=&lt;&lt;&lt;&lt;-
-0..*</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>190</y><w>240</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Balance&gt;&gt;
---
-+current: Number 
---
-/-decrement(amount)/
-returns this.currentBalance
-/-increment(amount)/
-returns this.currentBalance
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>100</y><w>220</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+0..*</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>100</y><w>220</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 
 
 an account has only 1 balance</panel_attributes><additional_attributes>200;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>160</y><w>240</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Statement&gt;&gt;
@@ -51,4 +43,15 @@ an account has only 1 balance</panel_attributes><additional_attributes>200;10;10
 -constructor takes transactions array
 --
 /print()/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>90</y><w>70</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
-</panel_attributes><additional_attributes>10;10;50;70</additional_attributes></element></diagram>
+</panel_attributes><additional_attributes>10;10;50;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>200</y><w>240</w><h>160</h></coordinates><panel_attributes>&lt;&lt;Balance&gt;&gt;
+--
+-currentBalance: Number 
+--
+/-decrement(amount)/
+returns this.currentBalance
+/-increment(amount)/
+returns this.currentBalance
+-get and set for currentBalance could
+provide protection against user 
+manipulating it
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

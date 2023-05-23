@@ -1,4 +1,5 @@
 class Account {
+
   constructor(balanceClass = Balance) {
       this.balance = new balanceClass();
   }
