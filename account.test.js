@@ -38,4 +38,13 @@ describe('Account class unit test', () => {
       expect(account.balance.current).toEqual(0);
     });
   });
+
+  describe('withdraw()', () => {
+    it("doesn't allow the user to withdraw more than their balance", () => {
+      account = new Account(Balance);
+      account.deposit(300);
+      expect(account.balance.current).toEqual(300);
+      expect(account.withdraw(500)).toEqual('Insufficient funds. You only have 300.00');
+    });
+  });
 });
