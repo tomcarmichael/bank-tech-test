@@ -16,10 +16,11 @@ describe('Account class unit test', () => {
       };
     });
 
-    Transaction.mockImplementation((amount, type) => {
+    Transaction.mockImplementation((amount, type, resultingBalance) => {
       return {
         type: type,
         amount: amount,
+        resultingBalance: resultingBalance
       }
     });
   });
@@ -100,7 +101,7 @@ describe('Account class unit test', () => {
     });
   });
 
-  xit('Assigns the resulting balance to a transaction', () => {
+  it('Assigns the resulting balance to a transaction', () => {
     account = new Account(Balance, Transaction);
     account.deposit(2000);
     account.withdraw(500);
