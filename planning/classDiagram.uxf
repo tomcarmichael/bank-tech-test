@@ -1,0 +1,54 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notesa</help_text><element><id>UMLClass</id><coordinates><x>310</x><y>9</y><w>300</w><h>290</h></coordinates><panel_attributes>Account
+--
+-balance: Balance object
+-transactions: Array of transaction objects
+--
+/+printStatement()/ 
+Statemen.print(this.transactions)
+
+/+withdraw(amount)/
+Creates a new withdrawl object 
+Its resultingBalance = balance.decrement
+(this is to keep track of the balances for statement)
+transactions.push(withdrawl)
+
+/+deposit(amount)/
+Creates a new deposit object 
+Its resultingBalance = balance.increment
+transactions.push(deposit)
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>359</y><w>240</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Transaction&gt;&gt;
+--
++date: Date
++amount: Number
++resultingBalance: Number
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>489</y><w>240</w><h>70</h></coordinates><panel_attributes>Withdrawl
+--
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>489</y><w>240</w><h>70</h></coordinates><panel_attributes>Deposit
+--
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>439</y><w>40</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>20;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>439</y><w>40</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;20;50</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>289</y><w>50</w><h>80</h></coordinates><panel_attributes> 1
+lt=&lt;&lt;&lt;&lt;-
+0..*</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>199</y><w>240</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Balance&gt;&gt;
+--
+-currentBalance: Number 
+--
+/-decrement(amount)/
+returns this.currentBalance
+/-increment(amount)/
+returns this.currentBalance
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>109</y><w>220</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+
+
+an account has only 1 balance</panel_attributes><additional_attributes>200;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>169</y><w>240</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Statement&gt;&gt;
+--
+-constructor takes transactions array
+--
+/print()/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>99</y><w>70</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>10;10;50;70</additional_attributes></element></diagram>
