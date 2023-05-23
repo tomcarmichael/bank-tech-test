@@ -1,12 +1,14 @@
 const Balance = require('./balance');
 const Transaction = require('./transaction');
+const Statement = require('./statement');
 
 class Account {
   #transactionsArray;
 
-  constructor(balanceClass = Balance, transactionClass = Transaction) {
+  constructor(balanceClass = Balance, transactionClass = Transaction, statementClass = Statement) {
       this.balance = new balanceClass();
       this.transactionClass = transactionClass;
+      this.statementClass = statementClass;
       this.#transactionsArray = []
   }
 
@@ -32,6 +34,10 @@ class Account {
     const transaction = new this.transactionClass(amount, 'debit', this.balance.current)
     this.#transactionsArray.push(transaction);
     return `Withdrawl successful, resulting balance is ${this.balance.current}.00`;
+  }
+
+  printStatement() {
+    return this.statementClass.print(this.transactions);
   }
 }
 

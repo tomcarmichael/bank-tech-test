@@ -26,6 +26,6 @@ describe('Statement class unit test', () => {
     const expectedStatement =
       "date || credit || debit || balance\n14/01/2023 || || 500.00 || 2500.00\n13/01/2023 || 2000.00 || || 3000.00\n10/01/2023 || 1000.00 || || 1000.00\n"
 
-    expect(Statement.printStatement(transactions)).toEqual(expectedStatement);
+    expect(Statement.print(transactions)).toEqual(expectedStatement);
   });
 });

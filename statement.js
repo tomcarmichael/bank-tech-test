@@ -1,6 +1,6 @@
 class Statement {
 
-  static printStatement(transactions) {
+  static print(transactions) {
     let statement = 'date || credit || debit || balance\n';
     transactions.reverse().forEach((transaction) => {
       statement += `${transaction.date} || `

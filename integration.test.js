@@ -26,7 +26,7 @@ describe('Bank account integration test', () => {
     expect(account.balance.current).toEqual(1000);
   });
 
-  xit("Prints a statement of all transactions", () => {
+  it("Prints a statement of all transactions", () => {
     account = new Account();
 
     let mockDate = new Date('2023-01-10T12:00:00Z')
@@ -51,11 +51,8 @@ describe('Bank account integration test', () => {
     spy.mockRestore()
 
     const expectedStatement =
-      `date || credit || debit || balance\n
-      14/01/2023 || || 500.00 || 2500.00\n
-      13/01/2023 || 2000.00 || || 3000.00\n
-      10/01/2023 || 1000.00 || || 1000.00\n`
+      "date || credit || debit || balance\n14/01/2023 || || 500.00 || 2500.00\n13/01/2023 || 2000.00 || || 3000.00\n10/01/2023 || 1000.00 || || 1000.00\n"
 
-    expect(account.printStatement).toEqual(expectedStatement);
+    expect(account.printStatement()).toEqual(expectedStatement);
   });
 });
