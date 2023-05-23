@@ -8,7 +8,7 @@ describe('Account class unit test', () => {
     Balance.mockClear();
   });
 
-  Balance.mockImplementation(() => {
+  Balance.mockImplementation(() => {    
     return {
       current: 0,
     };
