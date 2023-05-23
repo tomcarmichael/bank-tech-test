@@ -16,7 +16,7 @@ describe('Bank account integration test', () => {
   it('allows the user to withdraw 500', () => {
     account = new Account(Balance);
     account.deposit(1000);
-    expect(account.withdraw(500)).toEqual('Deposit successful, resulting balance is 500.00');
+    expect(account.withdraw(500)).toEqual('Withdrawl successful, resulting balance is 500.00');
     expect(account.balance.current).toEqual(500);
   });
 });

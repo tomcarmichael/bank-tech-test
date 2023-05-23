@@ -13,7 +13,7 @@ class Account {
 
   withdraw(amount) {
     this.balance.current -= amount;
-    return `Deposit successful, resulting balance is ${this.balance.current}.00`;
+    return `Withdrawl successful, resulting balance is ${this.balance.current}.00`;
   }
 }
 
