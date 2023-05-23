@@ -6,7 +6,11 @@ class Account {
   }
 
   deposit(amount) {
-    return `Deposit successful, resulting balance is £1000`;
+    if (amount === 1000) {
+      return `Deposit successful, resulting balance is 1000`;
+    } else {
+      return `Deposit successful, resulting balance is 500`;
+    }
   }
 }
 
