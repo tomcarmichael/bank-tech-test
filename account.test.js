@@ -1,7 +1,9 @@
 const Account = require('./account');
 const Balance = require('./balance');
+const Transaction = require('./transaction')
 
 jest.mock('./balance.js');
+jest.mock('./transaction.js');
 
 describe('Account class unit test', () => {
   beforeEach(() => {
@@ -44,6 +46,13 @@ describe('Account class unit test', () => {
       expect(account.deposit(0)).toEqual('Deposit unsuccessful, cannot deposit 0');
       expect(account.balance.current).toEqual(0);
     });
+
+    it("adds deposits to the transactions array", () => {
+      account = new Account(Balance, Transaction);
+      account.deposit(2000);
+      expect(account.transactions.length).toEqual(1);
+      expect(account.transactions[1].type).toEqual('deposit');
+    });
   });
 
   describe('withdraw()', () => {
@@ -71,6 +80,14 @@ describe('Account class unit test', () => {
       account.deposit(2000);
       expect(account.withdraw(1000)).toEqual('Withdrawl successful, resulting balance is 1000.00');
       expect(account.balance.current).toEqual(1000);
+    });
+
+    xit("adds withdrawls to the transactions array", () => {
+      account = new Account(Balance, Transaction);
+      account.deposit(2000);
+      account.withdraw(1000);
+      expect(account.transactions.length).toEqual(2);
+      expect(account.transactions[1].type).toEqual('withdrawl');
     });
   });
 });

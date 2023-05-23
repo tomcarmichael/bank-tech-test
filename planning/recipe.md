@@ -96,7 +96,7 @@ Test for code coverage `npx jest --coverage`
 `date || credit || debit || balance`
 - then calls .reverse on transactions array to put it in reverse chronological order
 - then iterates over each transaction and....
-- > printing the date of the transaction
+- > printing the date of the transaction formatted DD/MM/YYYY 
 - > printing `||`
 - > if it is of type `Deposit`, printing the amount `+ '.00'`
 - > else, printing a blank space
