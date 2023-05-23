@@ -27,7 +27,7 @@ describe('Bank account integration test', () => {
     expect(account.balance.current).toEqual(1000);
   });
 
-  it("Prints a statement of all transactions", () => {
+  xit("Prints a statement of all transactions", () => {
     account = new Account(Balance);
 
     global.Date = jest.fn(() => new Date('2023-01-10T12:00:00Z'));

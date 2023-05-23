@@ -8,12 +8,20 @@ jest.mock('./transaction.js');
 describe('Account class unit test', () => {
   beforeEach(() => {
     Balance.mockClear();
-  });
+    Transaction.mockClear();
 
-  Balance.mockImplementation(() => {    
-    return {
-      current: 0,
-    };
+    Balance.mockImplementation(() => {    
+      return {
+        current: 0
+      };
+    });
+
+    Transaction.mockImplementation((amount, type) => {
+      return {
+        type: type,
+        amount: amount
+      }
+    });
   });
 
   describe('constructor', () => {
@@ -48,10 +56,11 @@ describe('Account class unit test', () => {
     });
 
     it("adds deposits to the transactions array", () => {
+
       account = new Account(Balance, Transaction);
       account.deposit(2000);
       expect(account.transactions.length).toEqual(1);
-      expect(account.transactions[1].type).toEqual('deposit');
+      expect(account.transactions[0].type).toEqual('credit');
     });
   });
 
@@ -87,7 +96,7 @@ describe('Account class unit test', () => {
       account.deposit(2000);
       account.withdraw(1000);
       expect(account.transactions.length).toEqual(2);
-      expect(account.transactions[1].type).toEqual('withdrawl');
+      expect(account.transactions[1].type).toEqual('debit');
     });
   });
 });
