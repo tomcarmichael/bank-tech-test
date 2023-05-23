@@ -6,6 +6,16 @@ describe('Transaction unit test', () => {
     expect(transaction.date).toEqual(new Date().toLocaleDateString("en-GB"));
   });
 
+  it('Returns the correct format date given a historic mock date', () => {
+    const mockDate = new Date('1999-12-31T23:59:59Z')
+    const spy = jest
+      .spyOn(global, 'Date')
+      .mockImplementation(() => mockDate)
+    const transaction = new Transaction(100, 'credit');
+    expect(transaction.date).toEqual('31/12/1999');
+    spy.mockRestore()
+  });
+
   it('Does not let the user modify the amount after creation', () => {
     const transaction = new Transaction(100, 'credit');
     transaction.amount = 1000;
