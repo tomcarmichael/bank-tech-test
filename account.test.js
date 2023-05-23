@@ -44,7 +44,12 @@ describe('Account class unit test', () => {
       account = new Account(Balance);
       account.deposit(300);
       expect(account.balance.current).toEqual(300);
-      expect(account.withdraw(500)).toEqual('Insufficient funds. You only have 300.00');
+      expect(account.withdraw(500)).toEqual('Insufficient funds. Your current balance is: 300.00');
+    });
+
+    it("doesn't allow the user to withdraw before they have made a deposit", () => {
+      account = new Account(Balance);
+      expect(account.withdraw(5)).toEqual('Insufficient funds. Your current balance is: 0.00');
     });
   });
 });

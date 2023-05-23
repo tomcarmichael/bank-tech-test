@@ -13,7 +13,7 @@ class Account {
 
   withdraw(amount) {
     if (amount > this.balance.current) {
-      return `Insufficient funds. You only have 300.00`
+      return `Insufficient funds. Your current balance is: ${this.balance.current}.00`
     }
     this.balance.current -= amount;
     return `Withdrawl successful, resulting balance is ${this.balance.current}.00`;
