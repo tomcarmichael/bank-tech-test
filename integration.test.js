@@ -29,20 +29,26 @@ describe('Bank account integration test', () => {
   xit("Prints a statement of all transactions", () => {
     account = new Account();
 
-    // global.Date = jest.fn(() => new Date('2023-01-10T12:00:00Z'));
-    const mockDate = new Date('2023-01-10T12:00:00Z')
-    const spy = jest
+    let mockDate = new Date('2023-01-10T12:00:00Z')
+    let spy = jest
       .spyOn(global, 'Date')
       .mockImplementation(() => mockDate)
-
     account.deposit(1000);
     spy.mockRestore()
 
-    // global.Date = jest.fn(() => new Date('2023-01-13T12:00:00Z'));
+    mockDate = new Date('2023-01-13T12:00:00Z')
+    spy = jest
+      .spyOn(global, 'Date')
+      .mockImplementation(() => mockDate)
     account.deposit(2000);
+    spy.mockRestore()
 
-    // global.Date = jest.fn(() => new Date('2023-01-14T12:00:00Z'));
+    mockDate = new Date('2023-01-14T12:00:00Z')
+    spy = jest
+      .spyOn(global, 'Date')
+      .mockImplementation(() => mockDate)
     account.withdraw(500);
+    spy.mockRestore()
 
     const expectedStatement =
       `date || credit || debit || balance\n
