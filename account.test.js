@@ -91,7 +91,7 @@ describe('Account class unit test', () => {
       expect(account.balance.current).toEqual(1000);
     });
 
-    xit("adds withdrawls to the transactions array", () => {
+    it("adds withdrawls to the transactions array", () => {
       account = new Account(Balance, Transaction);
       account.deposit(2000);
       account.withdraw(1000);

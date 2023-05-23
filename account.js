@@ -28,6 +28,7 @@ class Account {
       return `Insufficient funds. Your current balance is ${this.balance.current}.00`
     }
     this.balance.current -= amount;
+    this.#transactionsArray.push(new this.transactionClass(amount, 'debit'));
     return `Withdrawl successful, resulting balance is ${this.balance.current}.00`;
   }
 }
