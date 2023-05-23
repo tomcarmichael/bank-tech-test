@@ -33,6 +33,11 @@ describe('Account class unit test', () => {
     account = new Account(Balance);
     expect(account.deposit(0)).toEqual('Deposit unsuccessful, cannot deposit 0');
   });
+
+  it("doesn't allow the user to deposit 0", () => {
+    account = new Account(Balance);
+    expect(account.deposit(0)).toEqual('Deposit unsuccessful, cannot deposit 0');
+  });
 });
 
 
