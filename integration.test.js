@@ -1,34 +1,33 @@
 const Account = require('./account');
-const Balance = require('./balance');
 
 describe('Bank account integration test', () => {
   it('initializes with a balance of 0', () => {
-    account = new Account(Balance);
+    account = new Account();
     expect(account.balance.current).toEqual(0);
   });
 
   it('allows the user to deposit 1000', () => {
-    account = new Account(Balance);
+    account = new Account();
     expect(account.deposit(1000)).toEqual('Deposit successful, resulting balance is 1000.00');
     expect(account.balance.current).toEqual(1000);
   });
 
   it('allows the user to withdraw 500', () => {
-    account = new Account(Balance);
+    account = new Account();
     account.deposit(1000);
     expect(account.withdraw(500)).toEqual('Withdrawl successful, resulting balance is 500.00');
     expect(account.balance.current).toEqual(500);
   });
 
   it("allows the user to withdraw 1000 and updates their balance", () => {
-    account = new Account(Balance);
+    account = new Account();
     account.deposit(2000);
     expect(account.withdraw(1000)).toEqual('Withdrawl successful, resulting balance is 1000.00');
     expect(account.balance.current).toEqual(1000);
   });
 
   xit("Prints a statement of all transactions", () => {
-    account = new Account(Balance);
+    account = new Account();
 
     // global.Date = jest.fn(() => new Date('2023-01-10T12:00:00Z'));
     const mockDate = new Date('2023-01-10T12:00:00Z')

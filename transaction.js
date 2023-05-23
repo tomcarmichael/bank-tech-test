@@ -3,7 +3,6 @@ class Transaction {
   #withdrawlOrDeposit;
 
   constructor(amount, type) {
-    // this.date = new Date().toLocaleDateString("en-GB")
     this.date = new Date().toLocaleDateString("en-GB")
     this.#transactionAmount = amount;
     this.resultingAmount;
