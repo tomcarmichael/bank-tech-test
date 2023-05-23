@@ -5,11 +5,11 @@ const Statement = require('./statement');
 class Account {
   #transactionsArray;
 
-  constructor(balanceClass = Balance, transactionClass = Transaction, statementClass = Statement) {
-      this.balance = new balanceClass();
-      this.transactionClass = transactionClass;
-      this.statementClass = statementClass;
-      this.#transactionsArray = []
+  constructor(BalanceClass = Balance, TransactionClass = Transaction, StatementClass = Statement) {
+    this.balance = new BalanceClass();
+    this.TransactionClass = TransactionClass;
+    this.StatementClass = StatementClass;
+    this.#transactionsArray = [];
   }
 
   get transactions() {
@@ -18,26 +18,26 @@ class Account {
 
   deposit(amount) {
     if (amount === 0) {
-      return `Deposit unsuccessful, cannot deposit 0`;
+      return 'Deposit unsuccessful, cannot deposit 0';
     }
     this.balance.current += amount;
-    const transaction = new this.transactionClass(amount, 'credit', this.balance.current)
+    const transaction = new this.TransactionClass(amount, 'credit', this.balance.current);
     this.#transactionsArray.push(transaction);
     return `Deposit successful, resulting balance is ${this.balance.current}.00`;
   }
 
   withdraw(amount) {
     if (amount > this.balance.current) {
-      return `Insufficient funds. Your current balance is ${this.balance.current}.00`
+      return `Insufficient funds. Your current balance is ${this.balance.current}.00`;
     }
     this.balance.current -= amount;
-    const transaction = new this.transactionClass(amount, 'debit', this.balance.current)
+    const transaction = new this.TransactionClass(amount, 'debit', this.balance.current);
     this.#transactionsArray.push(transaction);
     return `Withdrawl successful, resulting balance is ${this.balance.current}.00`;
   }
 
   printStatement() {
-    return this.statementClass.print(this.transactions);
+    return this.StatementClass.print(this.transactions);
   }
 }
 

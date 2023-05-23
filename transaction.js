@@ -1,10 +1,12 @@
 class Transaction {
   #transactionAmount;
+
   #withdrawlOrDeposit;
+
   #resultantBalance;
 
   constructor(amount, type, resultingBalance) {
-    this.date = new Date().toLocaleDateString("en-GB")
+    this.date = new Date().toLocaleDateString('en-GB');
     this.#transactionAmount = amount;
     this.#resultantBalance = resultingBalance;
     this.#withdrawlOrDeposit = type;
@@ -13,7 +15,7 @@ class Transaction {
   get amount() {
     return this.#transactionAmount;
   }
-  
+
   get resultingBalance() {
     return this.#resultantBalance;
   }
@@ -21,6 +23,6 @@ class Transaction {
   get type() {
     return this.#withdrawlOrDeposit;
   }
-} 
+}
 
 module.exports = Transaction;

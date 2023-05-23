@@ -1,7 +1,7 @@
 class Balance {
   #currentBalance;
 
-  constructor() { 
+  constructor() {
     this.#currentBalance = 0;
   }
 
