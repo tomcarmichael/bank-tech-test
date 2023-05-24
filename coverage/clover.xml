@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684865389089" clover="3.2.0">
-  <project timestamp="1684865389089" name="All files">
+<coverage generated="1684924354679" clover="3.2.0">
+  <project timestamp="1684924354679" name="All files">
     <metrics statements="42" coveredstatements="42" conditionals="11" coveredconditionals="11" methods="14" coveredmethods="14" elements="67" coveredelements="67" complexity="0" loc="42" ncloc="42" packages="1" files="4" classes="4"/>
     <file name="account.js" path="/Users/tomcarmichael/Documents/code/js/bank-tech-test/account.js">
       <metrics statements="22" coveredstatements="22" conditionals="7" coveredconditionals="7" methods="5" coveredmethods="5"/>
@@ -36,25 +36,25 @@
     </file>
     <file name="statement.js" path="/Users/tomcarmichael/Documents/code/js/bank-tech-test/statement.js">
       <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <line num="3" count="2" type="stmt"/>
       <line num="4" count="2" type="stmt"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="6" count="6" type="stmt"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="6" count="6" type="cond" truecount="2" falsecount="0"/>
       <line num="7" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="8" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="9" count="6" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="15" count="3" type="stmt"/>
+      <line num="8" count="6" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
     </file>
     <file name="transaction.js" path="/Users/tomcarmichael/Documents/code/js/bank-tech-test/transaction.js">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-      <line num="7" count="12" type="stmt"/>
-      <line num="8" count="12" type="stmt"/>
       <line num="9" count="12" type="stmt"/>
       <line num="10" count="12" type="stmt"/>
-      <line num="14" count="4" type="stmt"/>
-      <line num="18" count="5" type="stmt"/>
-      <line num="22" count="7" type="stmt"/>
-      <line num="26" count="3" type="stmt"/>
+      <line num="11" count="12" type="stmt"/>
+      <line num="12" count="12" type="stmt"/>
+      <line num="16" count="4" type="stmt"/>
+      <line num="20" count="5" type="stmt"/>
+      <line num="24" count="7" type="stmt"/>
+      <line num="28" count="3" type="stmt"/>
     </file>
   </project>
 </coverage>
