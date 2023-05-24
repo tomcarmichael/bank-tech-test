@@ -1,4 +1,4 @@
-const Statement = require('./statement');
+const Statement = require('../statement');
 
 describe('Statement class unit test', () => {
   it('prints a statement of all transactions', () => {

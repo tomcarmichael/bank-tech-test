@@ -1,4 +1,4 @@
-const Transaction = require('./transaction');
+const Transaction = require('../transaction');
 
 describe('Transaction unit test', () => { 
   it('Initializes with a date in UK short format & stores the resultingBalance', () => {

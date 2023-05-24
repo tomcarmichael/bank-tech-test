@@ -1,9 +1,9 @@
-const Account = require('./account');
-const Balance = require('./balance');
-const Transaction = require('./transaction')
+const Account = require('../account');
+const Balance = require('../balance');
+const Transaction = require('../transaction')
 
-jest.mock('./balance.js');
-jest.mock('./transaction.js');
+jest.mock('../balance.js');
+jest.mock('../transaction.js');
 
 describe('Account class unit test', () => {
   beforeEach(() => {

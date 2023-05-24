@@ -1,4 +1,4 @@
-const Account = require('./account');
+const Account = require('../account');
 
 describe('Bank account integration test', () => {
   it('initializes with a balance of 0', () => {
