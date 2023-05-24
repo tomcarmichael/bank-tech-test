@@ -33,15 +33,10 @@ date || credit || debit || balance
 - tried to withdraw or deposit a negative number - perhaps not necessary to manage given acceptance criteria
 - As per the acceptance criteria, the program only needs to handle integers for input
 
-### Additional considerations:
-
-- To avoid any problems with floating point imprecision, amounts will stored in program in pence, but UI will deal with 2dp floating point numbers (functions will take 3dp fp as arguments)
 - I did consider the use of .unshift() to prepend each transaction to the transcations array as they are created, but thought that this could become costly in terms of computation as the array grows in size. 
+- 
 - the transcations could either be their own classes (Withdrawl, Deposit), or they could be instances of Transaction with a property `type` that is a string of either 'withdrawl' or 'deposit'. They will only have state an not methods so could equally be stored as hashes
-- The balance at the time of each transaction could be recorded with that transaction (more use of memory) or it could be calculated starting from the current balance at the time of statement creation and based on the amount and type of each transaction (more use of computation).
-- Returning a message that deposit / withdrawl was succesful and the resulting balance was not specified in the brief, but useful as a means of testing functionality, and for the user. If building this program in a real world situation I would clarify whether the product owner wanted this.
 
-Test for code coverage `npx jest --coverage`
 
 ## USE CASE 
 
