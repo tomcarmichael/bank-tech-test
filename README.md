@@ -6,7 +6,7 @@ This repository contains a solution for Makers Academy Bank Tech Test - a mock t
 
 Clone the repo:
 
- `git clone [path-to-your-repo](https://github.com/tomcarmichael/bank-tech-test.git)`
+ `git clone https://github.com/tomcarmichael/bank-tech-test.git`
 
 Install dependancies:
 
